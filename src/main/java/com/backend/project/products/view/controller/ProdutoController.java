@@ -1,4 +1,4 @@
-package com.backend.project.products.controller;
+package com.backend.project.products.view.controller;
 
 import java.util.List;
 import java.util.Optional;

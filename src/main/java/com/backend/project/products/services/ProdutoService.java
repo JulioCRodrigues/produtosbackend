@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.backend.project.products.model.Produto;
 import com.backend.project.products.repository.ProdutoRepository_old;
+import com.backend.project.products.shared.ProdutoDTO;
 
 @Service
 public class ProdutoService {
@@ -16,17 +17,17 @@ public class ProdutoService {
     private ProdutoRepository_old produtoRepository;
 
     // Obter todos 
-    public List<Produto> obterTodos(){
+    public List<ProdutoDTO> obterTodos(){
         return produtoRepository.obterTodos();
     }
 
     // Obter produto por ID
-    public Optional<Produto> obterPorId(Integer id){
+    public Optional<ProdutoDTO> obterPorId(Integer id){
          return produtoRepository.obterPorId(id);
     }
 
     // Adicionar o produto na lista de produtos
-    public Produto adicionar(Produto produto){
+    public ProdutoDTO adicionar(ProdutoDTO produto){
         return produtoRepository.adicionar(produto);
     }
 
@@ -36,7 +37,7 @@ public class ProdutoService {
     }
 
     // Atualizar produto da lista
-    public Produto atualizar(Integer id, Produto produto){
+    public ProdutoDTO atualizar(Integer id, ProdutoDTO produto){
 
         // Fazer alguma validação no ID
         produto.setId(id);
