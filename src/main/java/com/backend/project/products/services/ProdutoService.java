@@ -2,7 +2,9 @@ package com.backend.project.products.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,10 @@ public class ProdutoService {
 
     // Obter todos 
     public List<ProdutoDTO> obterTodos(){
-        return produtoRepository.obterTodos();
+
+        List<Produto> produtos = produtoRepository.obterTodos();
+        return produtos.stream().map(produto -> new ModelMapper().map(produto, ProdutoDTO.class))
+        .collect(Collectors.toList());
     }
 
     // Obter produto por ID
