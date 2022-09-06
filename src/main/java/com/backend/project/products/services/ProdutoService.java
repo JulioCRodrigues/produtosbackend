@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.backend.project.products.model.Produto;
 import com.backend.project.products.model.exception.ResourceNotFoundException;
 import com.backend.project.products.repository.ProdutoRepository;
-import com.backend.project.products.repository.ProdutoRepository_old;
 import com.backend.project.products.shared.ProdutoDTO;
 
 @Service
